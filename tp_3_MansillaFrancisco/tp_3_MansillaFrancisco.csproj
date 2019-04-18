@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,19 +75,133 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ArticulosSeleccionados.aspx" />
+    <Content Include="ArticulosSeleccionadosWithMasterPage.aspx" />
+    <Content Include="DB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DB.Context.cs</LastGenOutput>
+      <DependentUpon>DB.edmx</DependentUpon>
+    </Content>
+    <Content Include="DB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DB.edmx</DependentUpon>
+      <LastGenOutput>DB.cs</LastGenOutput>
+    </Content>
+    <Content Include="Imagenes\1.jpg" />
+    <Content Include="Imagenes\10.jpg" />
+    <Content Include="Imagenes\11.jpg" />
+    <Content Include="Imagenes\12.jpg" />
+    <Content Include="Imagenes\13.jpg" />
+    <Content Include="Imagenes\14.jpg" />
+    <Content Include="Imagenes\15.jpg" />
+    <Content Include="Imagenes\16.jpg" />
+    <Content Include="Imagenes\17.jpg" />
+    <Content Include="Imagenes\18.jpg" />
+    <Content Include="Imagenes\19.jpg" />
+    <Content Include="Imagenes\2.jpg" />
+    <Content Include="Imagenes\20.jpg" />
+    <Content Include="Imagenes\21.jpg" />
+    <Content Include="Imagenes\22.jpg" />
+    <Content Include="Imagenes\23.jpg" />
+    <Content Include="Imagenes\24.jpg" />
+    <Content Include="Imagenes\25.jpg" />
+    <Content Include="Imagenes\27.jpg" />
+    <Content Include="Imagenes\28.jpg" />
+    <Content Include="Imagenes\29.jpg" />
+    <Content Include="Imagenes\3.jpg" />
+    <Content Include="Imagenes\30.jpg" />
+    <Content Include="Imagenes\36.jpg" />
+    <Content Include="Imagenes\4.jpg" />
+    <Content Include="Imagenes\5.jpg" />
+    <Content Include="Imagenes\6.jpg" />
+    <Content Include="Imagenes\7.jpg" />
+    <Content Include="Imagenes\8.jpg" />
+    <Content Include="Imagenes\9.jpg" />
+    <Content Include="SeleccionArticulos.aspx" />
+    <Content Include="SeleccionArticulosWithMasterPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ARTICULO.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArticulosSeleccionados.aspx.cs">
+      <DependentUpon>ArticulosSeleccionados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArticulosSeleccionados.aspx.designer.cs">
+      <DependentUpon>ArticulosSeleccionados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArticulosSeleccionadosWithMasterPage.aspx.cs">
+      <DependentUpon>ArticulosSeleccionadosWithMasterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArticulosSeleccionadosWithMasterPage.aspx.designer.cs">
+      <DependentUpon>ArticulosSeleccionadosWithMasterPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MARCA.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeleccionArticulos.aspx.cs">
+      <DependentUpon>SeleccionArticulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeleccionArticulos.aspx.designer.cs">
+      <DependentUpon>SeleccionArticulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionArticulosWithMasterPage.aspx.cs">
+      <DependentUpon>SeleccionArticulosWithMasterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeleccionArticulosWithMasterPage.aspx.designer.cs">
+      <DependentUpon>SeleccionArticulosWithMasterPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TIPO.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="DB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DB.edmx.diagram">
+      <DependentUpon>DB.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
+    <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ComercioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ARTICULO">
+          <Key>
+            <PropertyRef Name="ID_ART" />
+          </Key>
+          <Property Name="ID_ART" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_MARCA" Type="int" Nullable="false" />
+          <Property Name="ID_TIPO" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PRECIO_ART" Type="float" />
+          <Property Name="URL_IMAGEN" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MARCA">
+          <Key>
+            <PropertyRef Name="ID_MARCA" />
+          </Key>
+          <Property Name="ID_MARCA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TIPO">
+          <Key>
+            <PropertyRef Name="ID_TIPO" />
+          </Key>
+          <Property Name="ID_TIPO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_ARTICULOS_MARCAS">
+          <End Role="MARCA" Type="Self.MARCA" Multiplicity="1" />
+          <End Role="ARTICULO" Type="Self.ARTICULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MARCA">
+              <PropertyRef Name="ID_MARCA" />
+            </Principal>
+            <Dependent Role="ARTICULO">
+              <PropertyRef Name="ID_MARCA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ARTICULOS_TIPO_ARTICULO">
+          <End Role="TIPO" Type="Self.TIPO" Multiplicity="1" />
+          <End Role="ARTICULO" Type="Self.ARTICULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO">
+              <PropertyRef Name="ID_TIPO" />
+            </Principal>
+            <Dependent Role="ARTICULO">
+              <PropertyRef Name="ID_TIPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ComercioModelStoreContainer">
+          <EntitySet Name="ARTICULO" EntityType="Self.ARTICULO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MARCA" EntityType="Self.MARCA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPO" EntityType="Self.TIPO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ARTICULOS_MARCAS" Association="Self.FK_ARTICULOS_MARCAS">
+            <End Role="MARCA" EntitySet="MARCA" />
+            <End Role="ARTICULO" EntitySet="ARTICULO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ARTICULOS_TIPO_ARTICULO" Association="Self.FK_ARTICULOS_TIPO_ARTICULO">
+            <End Role="TIPO" EntitySet="TIPO" />
+            <End Role="ARTICULO" EntitySet="ARTICULO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ComercioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ARTICULO">
+          <Key>
+            <PropertyRef Name="ID_ART" />
+          </Key>
+          <Property Name="ID_ART" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_MARCA" Type="Int32" Nullable="false" />
+          <Property Name="ID_TIPO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRECIO_ART" Type="Double" />
+          <Property Name="URL_IMAGEN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MARCA" Relationship="Self.FK_ARTICULOS_MARCAS" FromRole="ARTICULO" ToRole="MARCA" />
+          <NavigationProperty Name="TIPO" Relationship="Self.FK_ARTICULOS_TIPO_ARTICULO" FromRole="ARTICULO" ToRole="TIPO" />
+        </EntityType>
+        <EntityType Name="MARCA">
+          <Key>
+            <PropertyRef Name="ID_MARCA" />
+          </Key>
+          <Property Name="ID_MARCA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ARTICULO" Relationship="Self.FK_ARTICULOS_MARCAS" FromRole="MARCA" ToRole="ARTICULO" />
+        </EntityType>
+        <EntityType Name="TIPO">
+          <Key>
+            <PropertyRef Name="ID_TIPO" />
+          </Key>
+          <Property Name="ID_TIPO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ARTICULO" Relationship="Self.FK_ARTICULOS_TIPO_ARTICULO" FromRole="TIPO" ToRole="ARTICULO" />
+        </EntityType>
+        <Association Name="FK_ARTICULOS_MARCAS">
+          <End Role="MARCA" Type="Self.MARCA" Multiplicity="1" />
+          <End Role="ARTICULO" Type="Self.ARTICULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MARCA">
+              <PropertyRef Name="ID_MARCA" />
+            </Principal>
+            <Dependent Role="ARTICULO">
+              <PropertyRef Name="ID_MARCA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ARTICULOS_TIPO_ARTICULO">
+          <End Role="TIPO" Type="Self.TIPO" Multiplicity="1" />
+          <End Role="ARTICULO" Type="Self.ARTICULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO">
+              <PropertyRef Name="ID_TIPO" />
+            </Principal>
+            <Dependent Role="ARTICULO">
+              <PropertyRef Name="ID_TIPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ComercioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ARTICULO" EntityType="Self.ARTICULO" />
+          <EntitySet Name="MARCA" EntityType="Self.MARCA" />
+          <EntitySet Name="TIPO" EntityType="Self.TIPO" />
+          <AssociationSet Name="FK_ARTICULOS_MARCAS" Association="Self.FK_ARTICULOS_MARCAS">
+            <End Role="MARCA" EntitySet="MARCA" />
+            <End Role="ARTICULO" EntitySet="ARTICULO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ARTICULOS_TIPO_ARTICULO" Association="Self.FK_ARTICULOS_TIPO_ARTICULO">
+            <End Role="TIPO" EntitySet="TIPO" />
+            <End Role="ARTICULO" EntitySet="ARTICULO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ComercioModelStoreContainer" CdmEntityContainer="ComercioEntities">
+          <EntitySetMapping Name="ARTICULO">
+            <EntityTypeMapping TypeName="ComercioModel.ARTICULO">
+              <MappingFragment StoreEntitySet="ARTICULO">
+                <ScalarProperty Name="ID_ART" ColumnName="ID_ART" />
+                <ScalarProperty Name="ID_MARCA" ColumnName="ID_MARCA" />
+                <ScalarProperty Name="ID_TIPO" ColumnName="ID_TIPO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="PRECIO_ART" ColumnName="PRECIO_ART" />
+                <ScalarProperty Name="URL_IMAGEN" ColumnName="URL_IMAGEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MARCA">
+            <EntityTypeMapping TypeName="ComercioModel.MARCA">
+              <MappingFragment StoreEntitySet="MARCA">
+                <ScalarProperty Name="ID_MARCA" ColumnName="ID_MARCA" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO">
+            <EntityTypeMapping TypeName="ComercioModel.TIPO">
+              <MappingFragment StoreEntitySet="TIPO">
+                <ScalarProperty Name="ID_TIPO" ColumnName="ID_TIPO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
