@@ -87,6 +87,8 @@
       <DependentUpon>DB.edmx</DependentUpon>
       <LastGenOutput>DB.cs</LastGenOutput>
     </Content>
+    <Content Include="Ejercicio1.aspx" />
+    <Content Include="Ejercicio2.aspx" />
     <Content Include="Imagenes\1.jpg" />
     <Content Include="Imagenes\10.jpg" />
     <Content Include="Imagenes\11.jpg" />
@@ -153,6 +155,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Ejercicio1.aspx.cs">
+      <DependentUpon>Ejercicio1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ejercicio1.aspx.designer.cs">
+      <DependentUpon>Ejercicio1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ejercicio2.aspx.cs">
+      <DependentUpon>Ejercicio2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ejercicio2.aspx.designer.cs">
+      <DependentUpon>Ejercicio2.aspx</DependentUpon>
     </Compile>
     <Compile Include="MARCA.cs">
       <DependentUpon>DB.tt</DependentUpon>
