@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -87,7 +88,10 @@
       <DependentUpon>DB.edmx</DependentUpon>
       <LastGenOutput>DB.cs</LastGenOutput>
     </Content>
+    <Content Include="Ejercicio1_Bootstrap.aspx" />
     <Content Include="Ejercicio1.aspx" />
+    <Content Include="Ejercicio1_BootstrapHTML.html" />
+    <Content Include="Ejercicio2_Bootstrap.aspx" />
     <Content Include="Ejercicio2.aspx" />
     <Content Include="Imagenes\1.jpg" />
     <Content Include="Imagenes\10.jpg" />
@@ -156,12 +160,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Ejercicio1_Bootstrap.aspx.cs">
+      <DependentUpon>Ejercicio1_Bootstrap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ejercicio1_Bootstrap.aspx.designer.cs">
+      <DependentUpon>Ejercicio1_Bootstrap.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Ejercicio1.aspx.cs">
       <DependentUpon>Ejercicio1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Ejercicio1.aspx.designer.cs">
       <DependentUpon>Ejercicio1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ejercicio2_Bootstrap.aspx.cs">
+      <DependentUpon>Ejercicio2_Bootstrap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ejercicio2_Bootstrap.aspx.designer.cs">
+      <DependentUpon>Ejercicio2_Bootstrap.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ejercicio2.aspx.cs">
       <DependentUpon>Ejercicio2.aspx</DependentUpon>

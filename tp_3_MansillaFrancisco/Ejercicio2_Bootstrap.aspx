@@ -1,10 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ejercicio2.aspx.cs" Inherits="tp_3_MansillaFrancisco.Ejercicio2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ejercicio2_Bootstrap.aspx.cs" Inherits="tp_3_MansillaFrancisco.Ejercicio2" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Ejercicio2</title>
+    <title>Ejercicio2_Bootstrap</title>
+    <!-- CSS BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- JS BOOTSTRAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server" style="width:800px; height:600px">
