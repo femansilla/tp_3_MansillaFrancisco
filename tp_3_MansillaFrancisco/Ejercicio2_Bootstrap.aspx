@@ -5,27 +5,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Ejercicio2_Bootstrap</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- CSS BOOTSTRAP -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <!-- JS BOOTSTRAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form1" runat="server" style="width:800px; height:600px">
+
+    <div class="container well">
         
-        <div style="width:100%; height:10%;">
-            <div style="width:20%; height:100%; background-color:orange; float:left; "></div>
-            <div style="width:60%; height:100%; background-color:mediumpurple; float:left"></div>
-            <div style="width:20%; height:100%; background-color:orange; float:right"></div>
+        <div class="row">
+            <div class="col-lg-3" style="background-color:orange;"></div>
+            <div class="col-lg-offset-3" style="background-color:mediumpurple;"></div>
+            <div class="col-lg-offset-9 right" style="background-color:orange;"></div>
         </div>
 
-        <div style="width:100%; height:80%;">
-            <div style="width:60%; height:100%; background-color:darkkhaki; float:left"></div>
-            <div style="width:40%; height:100%; background-color:lightskyblue; float:right; "></div>
+        <div class="row">
+            <div class="col-lg-6" style="background-color:darkkhaki;"></div>
+            <div class="col-lg-offset-6" style="background-color:lightskyblue;"></div>
         </div>
         
-        <div style="width:100%; height:10%; background-color: black"></div>
-
-    </form>
+        <div class="row" style="background-color: black"></div>
+    </div>
+    
+    <!-- JQUERY -->
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <!-- JS BOOTSTRAP -->
+    <script src="Scripts/bootstrap.js"></script>
 </body>
 </html>
