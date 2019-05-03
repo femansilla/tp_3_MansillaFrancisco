@@ -22,6 +22,24 @@ namespace tp_3_MansillaFrancisco {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// selArt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink selArt;
+        
+        /// <summary>
+        /// artSelected control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink artSelected;
+        
+        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>

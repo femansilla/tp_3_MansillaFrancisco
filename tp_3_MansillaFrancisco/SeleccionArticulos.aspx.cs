@@ -49,5 +49,15 @@ namespace tp_3_MansillaFrancisco
                 lblMarca.Text = string.Format("<strong>Marca:</strong> {0}", value.Marca);
             }
         }
+
+        protected void filterMarca_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "comandofilterMarca")
+            {
+                var Marca = e.CommandArgument.ToString();
+                string comando = "Select * from articulo where ID_MARCA = (select ID_MARCA from MARCA where DESCRIPCION like '%"+ Marca.ToString() + "%')";
+                myDS.SelectCommand = comando;
+            }
+        }
     }
 }

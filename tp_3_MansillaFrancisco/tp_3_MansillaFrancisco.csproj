@@ -136,6 +136,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Inicio.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -144,6 +145,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="SeleccionArticulos.aspx" />
     <Content Include="SeleccionArticulosWithMasterPage.aspx" />
+    <Content Include="Validacion.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +209,13 @@
     <Compile Include="Ejercicio2.aspx.designer.cs">
       <DependentUpon>Ejercicio2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MARCA.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
@@ -234,6 +243,13 @@
     </Compile>
     <Compile Include="TIPO.cs">
       <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validacion.aspx.cs">
+      <DependentUpon>Validacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Validacion.aspx.designer.cs">
+      <DependentUpon>Validacion.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
