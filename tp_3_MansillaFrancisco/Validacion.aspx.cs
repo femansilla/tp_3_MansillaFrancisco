@@ -25,7 +25,12 @@ namespace tp_3_MansillaFrancisco
         {
             if (ddlLocalidades.Text != "")
             {
+                validDdlLocalidades.Text = "";
                 lblUserSuccess.Text = string.Format("Bienvenido Usuario {0}", txtUserName.Text);
+            }
+            else
+            {
+                validDdlLocalidades.Text = "Debe seleccionar una localidad";
             }
         }
     }

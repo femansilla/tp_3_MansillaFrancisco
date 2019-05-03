@@ -49,7 +49,8 @@
         <br />
         Localidades:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:DropDownList ID="ddlLocalidades" runat="server" Height="30px" Width="125px"></asp:DropDownList>
-        <asp:RequiredFieldValidator ID="validDdlLocalidades" runat="server" ControlToValidate="ddlLocalidades" InitialValue="&quot;&quot;">Debe seleccionar una localidad</asp:RequiredFieldValidator>
+        <asp:Label ID="validDdlLocalidades" runat="server"></asp:Label>
+
         <br />
         <br />
         <div style="width: 50%; margin-left: 15%">
